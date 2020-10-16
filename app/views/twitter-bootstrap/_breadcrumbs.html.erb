@@ -4,7 +4,9 @@
     <% @__bs_breadcrumbs[0..-2].each do |crumb| %>
       <li class="<%= options[:item_class] %>">
         <%= link_to crumb[:name], crumb[:url], crumb[:options] %>
-        <span class="divider <%= options[:divider_class] %>"><%= separator if separator %></span>
+        <% if divider %>
+          <span class="divider <%= options[:divider_class] %>"><%= separator %></span>
+        <% end %>
       </li>
     <% end %>
     <li class="<%= options[:active_class] %>">
